@@ -1,16 +1,14 @@
 class Fizzbuzz
   @@hash = {}
-  public
-  def self.SetRules(hash)
+
+  def self.rules(hash)
     @@hash = hash
   end
   def self.calculate(num)
-    #calculate certain number
-    1
+    result = ''
+    @@hash.keys.each do |key|
+      result += @@hash[key] if num % key == 0
+    end
+    result == '' ? num : result
   end
-
 end
-
-rules_hash = { 3 => "fizz", 5=> "buzz" }
-Fizzbuzz.SetRules(rules_hash)
-Fizzbuzz.calculate 2
