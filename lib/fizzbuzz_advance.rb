@@ -1,13 +1,12 @@
 class Fizzbuzz
-  @@hash = {}
-
-  def self.rules(hash)
-    @@hash = hash
+  def initialize(hash)
+    @hash = hash
   end
-  def self.calculate(num)
+
+  def calculate(num)
     result = ''
-    @@hash.keys.each do |key|
-      result += @@hash[key] if num % key == 0
+    @hash.keys.each do |key|
+      result += @hash[key] if num % key == 0
     end
     result == '' ? num : result
   end
